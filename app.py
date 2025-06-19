@@ -3,6 +3,28 @@ import pandas as pd
 import plotly.express as px
 from datetime import datetime
 
+# 🔒 LOGIN SIMPLES
+USER_CREDENTIALS = {
+    "Jonathan": "1031",
+    "Kamila": "1031"
+}
+
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
+if not st.session_state.logged_in:
+    st.title("Login")
+    username = st.text_input("Usuário")
+    password = st.text_input("Senha", type="password")
+    if st.button("Entrar"):
+        if username in USER_CREDENTIALS and USER_CREDENTIALS[username] == password:
+            st.session_state.logged_in = True
+            st.experimental_rerun()
+        else:
+            st.error("Usuário ou senha incorretos.")
+    st.stop()  # Impede o resto do app de carregar se não estiver logado
+
+
 def carregar_csv(caminho, colunas):
     try:
         df = pd.read_csv(caminho)
