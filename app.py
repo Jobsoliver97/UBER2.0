@@ -18,7 +18,7 @@ if not st.session_state.logged_in:
     if st.button("Entrar"):
         if username in USER_CREDENTIALS and USER_CREDENTIALS[username] == password:
             st.session_state.logged_in = True
-            st.success("Login realizado com sucesso!")
+            st.success('Login realizado com sucesso!')
             st.stop()
         else:
             st.error("Usuário ou senha incorretos.")
