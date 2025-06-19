@@ -3,6 +3,13 @@ import pandas as pd
 import plotly.express as px
 from datetime import datetime
 
+st.set_page_config(
+    page_title="Controle Uber",
+    page_icon="favicon.png",  # ou emoji tipo "🚗"
+    layout="wide"
+)
+
+
 # 🔒 LOGIN SIMPLES
 USER_CREDENTIALS = {
     "Jonathan": "1031"
