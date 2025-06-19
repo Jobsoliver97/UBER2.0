@@ -44,8 +44,8 @@ st.sidebar.title("Menu")
 pagina = st.sidebar.radio("Ir para:", ["Resumo Geral", "Nova Corrida", "Despesas Extras", "Receitas Manuais", "Metas", "Tabelas", "Gráficos"])
 
 st.sidebar.markdown("### Configurações de Consumo")
-consumo_medio = st.sidebar.number_input("Consumo médio (km/L)", value=9.5)
-preco_gasolina = st.sidebar.number_input("Preço da gasolina (R$/L)", value=6.20)
+consumo_medio = st.sidebar.number_input("Consumo médio (km/L)", value=10)
+preco_gasolina = st.sidebar.number_input("Preço da gasolina (R$/L)", value=5.89)
 
 if pagina == "Resumo Geral":
     st.title("Resumo Geral")
