@@ -5,8 +5,7 @@ from datetime import datetime
 
 # 🔒 LOGIN SIMPLES
 USER_CREDENTIALS = {
-    "Jonathan": "1031",
-    "Kamila": "1031"
+    "Jonathan": "1031"
 }
 
 if "logged_in" not in st.session_state:
@@ -22,9 +21,9 @@ if not st.session_state.logged_in:
             st.experimental_rerun()
         else:
             st.error("Usuário ou senha incorretos.")
-    st.stop()  # Impede o resto do app de carregar se não estiver logado
+    st.stop()
 
-
+# App continua aqui embaixo
 def carregar_csv(caminho, colunas):
     try:
         df = pd.read_csv(caminho)
@@ -44,8 +43,8 @@ st.sidebar.title("Menu")
 pagina = st.sidebar.radio("Ir para:", ["Resumo Geral", "Nova Corrida", "Despesas Extras", "Receitas Manuais", "Metas", "Tabelas", "Gráficos"])
 
 st.sidebar.markdown("### Configurações de Consumo")
-consumo_medio = st.sidebar.number_input("Consumo médio (km/L)", value=10)
-preco_gasolina = st.sidebar.number_input("Preço da gasolina (R$/L)", value=5.89)
+consumo_medio = st.sidebar.number_input("Consumo médio (km/L)", value=9.5)
+preco_gasolina = st.sidebar.number_input("Preço da gasolina (R$/L)", value=6.20)
 
 if pagina == "Resumo Geral":
     st.title("Resumo Geral")
